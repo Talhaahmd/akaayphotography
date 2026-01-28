@@ -6626,3 +6626,32 @@ img {
 	color: var(--headings-color) !important;
 	/* Transitions to full black/brand heading color */
 }
+/* FORCE 2-COLUMN GRID ON MOBILE */
+@media (max-width: 768px) {
+  /* Portfolio items on homepage and grid pages */
+  .item-portfolio.item-4cols,
+  .item-portfolio.item-3cols {
+    width: 50% !important;
+    float: left !important;
+  }
+  
+  .portfolio-grid-v2 .item-portfolio-holder-v2 {
+    margin-bottom: 20px !important;
+  }
+
+  /* Gallery items */
+  .item-portfolio.item-3cols.gallery-post {
+    width: 50% !important;
+  }
+}
+
+/* Hidden elements for infinite scroll */
+.infinite-scroll-trigger {
+  height: 10px;
+  width: 100%;
+  clear: both;
+}
+
+#load-more-btn {
+  display: none !important;
+}

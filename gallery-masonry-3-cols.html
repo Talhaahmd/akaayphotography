@@ -64,7 +64,8 @@
 					<div class="menu-contact">
 						<div class="mobile-content">
 							<h5 class="widgettitle">Main Office</h5>
-							<div class="mobile-address"> Sacramento, California <br> +1 916 800-9665 <br> info@akaayphotography.com</div>
+							<div class="mobile-address"> Sacramento, California <br> +1 916 800-9665 <br>
+								info@akaayphotography.com</div>
 							<h5 class="widgettitle">Social</h5>
 							<ul class="social-media">
 
@@ -385,29 +386,12 @@
 						</div>
 						<!-- /portfolio-masonry -->
 
+						<!-- Infinite Scroll Elements -->
+						<div class="text-center margin-t50">
+							<button id="load-more-btn" class="view-more" style="display:none;">Load More</button>
+							<div id="infinite-scroll-trigger" class="infinite-scroll-trigger"></div>
+						</div>
 
-						<script>
-							document.addEventListener('DOMContentLoaded', function () {
-								var btn = document.getElementById('load-more-btn');
-								if (btn) {
-									btn.addEventListener('click', function (e) {
-										e.preventDefault();
-										var hiddenItems = document.querySelectorAll('.masonry-grid-item.is-hidden');
-										for (var i = 0; i < 6 && i < hiddenItems.length; i++) {
-											hiddenItems[i].classList.remove('is-hidden');
-										}
-										// Trigger Isotope refresh if it exists
-										if (window.jQuery && typeof jQuery.fn.isotope === 'function') {
-											var $grid = jQuery('.gallery-holder-masonry');
-											$grid.isotope('layout');
-										}
-										if (document.querySelectorAll('.masonry-grid-item.is-hidden').length === 0) {
-											btn.style.display = 'none';
-										}
-									});
-								}
-							});
-						</script>
 					</div>
 					<!-- /col-lg-12 -->
 				</div>

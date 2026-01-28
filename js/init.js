@@ -289,4 +289,24 @@
 		$(window).on('resize scroll load', ensureWhatsApp);
 	});
 
+	// INFINITE SCROLL FOR GALLERY
+	$(document).ready(function () {
+		if ($('#infinite-scroll-trigger').length) {
+			const infiniteObserver = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						// Trigger click on hidden load more button
+						$('#load-more-btn').click();
+					}
+				});
+			}, {
+				rootMargin: '200px', // Load before user reaches the very bottom
+				threshold: 0.1
+			});
+
+			const trigger = document.querySelector('#infinite-scroll-trigger');
+			if (trigger) infiniteObserver.observe(trigger);
+		}
+	});
+
 })(jQuery);
