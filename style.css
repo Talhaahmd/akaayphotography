@@ -6655,3 +6655,229 @@ img {
 #load-more-btn {
   display: none !important;
 }
+
+/* Desi Wedding Section - Custom Aesthetic Styles */
+.desi-wedding-section {
+	position: relative;
+	overflow: hidden;
+}
+
+.desi-wedding-image-wrapper {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 0 20px 60px rgba(139, 30, 30, 0.15);
+	transition: all 0.6s cubic-bezier(0.30, 1, 0.35, 1);
+}
+
+.desi-wedding-image-wrapper:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 30px 80px rgba(139, 30, 30, 0.25);
+}
+
+.desi-wedding-img {
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: transform 0.8s cubic-bezier(0.30, 1, 0.35, 1);
+}
+
+.desi-wedding-image-wrapper:hover .desi-wedding-img {
+	transform: scale(1.05);
+}
+
+.image-overlay-gradient {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(135deg, rgba(139, 30, 30, 0.1) 0%, rgba(194, 155, 64, 0.1) 100%);
+	opacity: 0;
+	transition: opacity 0.6s ease;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.desi-wedding-image-wrapper:hover .image-overlay-gradient {
+	opacity: 1;
+}
+
+.image-accent-border {
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	right: -10px;
+	bottom: -10px;
+	border: 2px solid var(--secondary-color);
+	border-radius: 10px;
+	opacity: 0;
+	transition: all 0.6s cubic-bezier(0.30, 1, 0.35, 1);
+	z-index: -1;
+}
+
+.desi-wedding-image-wrapper:hover .image-accent-border {
+	opacity: 0.3;
+	top: -15px;
+	left: -15px;
+	right: -15px;
+	bottom: -15px;
+}
+
+.desi-wedding-content {
+	padding-left: 30px;
+	animation: fadeInRight 1s ease-out;
+}
+
+.desi-wedding-content .el-smalltitle {
+	color: var(--secondary-color);
+	font-weight: 700;
+	letter-spacing: 2px;
+	margin-bottom: 15px;
+	position: relative;
+	display: inline-block;
+}
+
+.desi-wedding-content .el-smalltitle::after {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	width: 50px;
+	height: 2px;
+	background: linear-gradient(90deg, var(--secondary-color) 0%, transparent 100%);
+}
+
+.desi-wedding-content h2 {
+	line-height: 1.2;
+	margin-bottom: 25px;
+}
+
+.desi-wedding-content .lead {
+	color: var(--body-color);
+	margin-bottom: 20px;
+	line-height: 1.8;
+}
+
+.desi-wedding-content p {
+	color: var(--muted-color);
+	line-height: 1.8;
+}
+
+.desi-wedding-content .read-more {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.desi-wedding-content .read-more::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: var(--primary-color);
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.4s cubic-bezier(0.30, 1, 0.35, 1);
+}
+
+.desi-wedding-content .read-more:hover::before {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+@keyframes fadeInRight {
+	from {
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Mobile Optimization */
+@media (max-width: 991px) {
+	.desi-wedding-section {
+		padding: 0 15px;
+	}
+	
+	.desi-wedding-image-wrapper {
+		margin-bottom: 40px;
+		box-shadow: 0 15px 40px rgba(139, 30, 30, 0.12);
+	}
+	
+	.desi-wedding-content {
+		padding-left: 0;
+		text-align: center;
+	}
+	
+	.desi-wedding-content .el-smalltitle {
+		display: block;
+		text-align: center;
+	}
+	
+	.desi-wedding-content .el-smalltitle::after {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	
+	.desi-wedding-content h2 {
+		font-size: 2rem;
+	}
+	
+	.desi-wedding-content .lead {
+		font-size: 1.1rem;
+	}
+	
+	.desi-wedding-content .margin-t30 {
+		text-align: center;
+	}
+}
+
+@media (max-width: 767px) {
+	.desi-wedding-content h2 {
+		font-size: 1.75rem;
+		margin-bottom: 20px;
+	}
+	
+	.desi-wedding-content .lead {
+		font-size: 1rem;
+		margin-bottom: 15px;
+	}
+	
+	.desi-wedding-image-wrapper {
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 575px) {
+	.desi-wedding-content h2 {
+		font-size: 1.5rem;
+	}
+	
+	.desi-wedding-content p {
+		font-size: 0.95rem;
+	}
+	
+	.margin-t100 {
+		margin-top: 60px !important;
+	}
+}
+
+
+/* Fix dropdown submenu text color - override white color from parent */
+.main-header .menu-nav li ul li a,
+.main-header .menu-nav li .sub-menu li a,
+.menu-nav > li > ul > li > a {
+	color: #1a1a1a !important;
+}
+
+.main-header .menu-nav li ul li a:hover,
+.main-header .menu-nav li .sub-menu li a:hover,
+.menu-nav > li > ul > li > a:hover {
+	color: var(--primary-color) !important;
+}
